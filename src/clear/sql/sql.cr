@@ -180,11 +180,11 @@ module Clear
     end
 
     # Start a DELETE table query
-    def delete(table = nil)
+    def delete(table : Symbolic)
       Clear::SQL::DeleteQuery.new("default").from(table)
     end
 
-    def delete(connection : Symbolic, table = nil)
+    def delete(connection : Symbolic, table : Symbolic)
       Clear::SQL::DeleteQuery.new(connection).from(table)
     end
 
